@@ -3,7 +3,8 @@ Created by HenryMa on 2020/8/24
 """
 
 __author__ = 'HenryMa'
-
+import os
+os.environ["QT_QPA_PLATFORM"] = "offscreen"
 
 import math
 from builtins import range, print
