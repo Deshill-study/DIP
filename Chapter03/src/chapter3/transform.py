@@ -7,25 +7,25 @@ class Transform:
     def __init__(self,image):
         self.image = image
     
-    def bitLayerTransform(image, layerNum)-> image:  
+    def bitLayerTransform(self, layerNum)-> image:  
         if layerNum == 1:
-            new_img = np.where((image >= 0) & (image < 2), 255, 0)
+            new_img = np.where((self.image >= 0) & (self.image < 2), 255, 0)
         elif layerNum == 2:
-            new_img = np.where((image >= 2) & (image < 4), 255, 0)
+            new_img = np.where((self.image >= 2) & (self.image < 4), 255, 0)
         elif layerNum == 3:
-            new_img = np.where((image >= 4) & (image < 8), 255, 0)
+            new_img = np.where((self.image >= 4) & (self.image < 8), 255, 0)
         elif layerNum == 4:
-            new_img = np.where((image >= 8) & (image < 16), 255, 0)
+            new_img = np.where((self.image >= 8) & (self.image < 16), 255, 0)
         elif layerNum == 5:
-            new_img = np.where((image >= 16) & (image < 32), 255, 0)
+            new_img = np.where((self.image >= 16) & (self.image < 32), 255, 0)
         elif layerNum == 6:
-            new_img = np.where((image >= 32) & (image < 64), 255, 0)
+            new_img = np.where((self.image >= 32) & (self.image < 64), 255, 0)
         elif layerNum == 7:
-            new_img = np.where((image >= 64) & (image < 128), 255, 0)
+            new_img = np.where((self.image >= 64) & (self.image < 128), 255, 0)
         elif layerNum == 8:
-            new_img = np.where((image >= 128) & (image < 256), 255, 0)
+            new_img = np.where((self.image >= 128) & (self.image < 256), 255, 0)
         else:
-            new_img = np.zeros((image.shape[0], image.shape[1]), dtype=np.uint8)
+            new_img = np.zeros((self.image.shape[0], self.image.shape[1]), dtype=np.uint8)
             print('Please enter the number of bit layers from 1 to 8')
 
         return new_img.astype(np.uint8)
@@ -43,14 +43,14 @@ class Transform:
                     new_img[i, j] = 255
         """
         # 区域映射
-        h, w = img.shape[0], img.shape[1]
+        h, w = self.image.shape[0], self.image.shape[1]
         new_img = np.zeros((h, w), dtype=np.uint8)
         for i in range(h):
             for j in range(w):
-                if 230 >= img[i, j] >= 190:
+                if 230 >= self.image[i, j] >= 190:
                     new_img[i, j] = 255
                 else:
-                    new_img[i, j] = img[i, j]
+                    new_img[i, j] = self.image[i, j]
         return new_img
 
 
@@ -74,11 +74,11 @@ class Transform:
         return new_img
         """
         # 灰度图
-        h, w = img.shape[0], img.shape[1]
+        h, w = self.image.shape[0], self.image.shape[1]
         new_img = np.zeros((h, w))
         for i in range(h):
             for j in range(w):
-                new_img[i, j] = c * (math.log(1.0 + img[i, j]))
+                new_img[i, j] = c * (math.log(1.0 + self.image[i, j]))
         new_img = cv2.normalize(new_img, new_img, 0, 255, cv2.NORM_MINMAX)/255.
         return new_img
     def contrastStretchTransform(image): # 灰度拉伸变换
