@@ -1,8 +1,3 @@
-"""
-空间域滤波封装（与 Chapter03/3.4 空间滤波器 内容对应）。
-
-依赖 OpenCV：彩色图按 BGR、uint8 约定处理，与教材配套示例一致。
-"""
 from __future__ import annotations
 
 from typing import Literal, Tuple
