@@ -1,3 +1,23 @@
+# 快速开始
+### 搭建环境
+##### 推荐使用miniconda创建虚拟环境（下载地址https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe）
+```
+conda create -n DIP python=3.8
+conda activate DIP
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple # 用清华源镜像加速
+```
+##### 直接安装
+```
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple # 用清华源镜像加速
+```
+### 运行
+```
+cd ./Experiment_GUET/src
+python Grayscale_transformation.py
+```
+### 结果图在./Experiment_GUET/image目录下
+
+# 知识点
 ## 灰度变换
 灰度图像是一种每个像素仅包含一个亮度值的图像类型，用于表示从最暗的黑色到最亮的白色之间的不同明暗层次。与只有黑白两种颜色的二值图像不同，灰度图像在黑与白之间有多个灰度级，能够更细腻地表现图像细节。
 

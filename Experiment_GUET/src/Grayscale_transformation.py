@@ -87,7 +87,7 @@ class Grayscale_transformation:
         for i in range(h):
             for j in range(w):
                 new_img[i, j] = c * (math.log(1.0 + self.image[i, j]))
-        new_img = cv2.normalize(new_img, new_img, 0, 255, cv2.NORM_MINMAX)/255.
+        new_img = cv2.normalize(new_img, new_img, 0, 255, cv2.NORM_MINMAX)
         new_img = np.uint8(new_img)
         return new_img
     def contrastStretchTransform(self,image): # 灰度拉伸变换
@@ -221,4 +221,3 @@ if __name__ == "__main__":
     # 直方图转换
     histogram_equalization_img = grayscale_transformation.histogram_equalization()
     cv2.imwrite('./image/Venti_histogram_equalization.jpg', histogram_equalization_img)
-    
