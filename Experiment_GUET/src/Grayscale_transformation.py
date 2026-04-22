@@ -211,7 +211,7 @@ if __name__ == "__main__":
 
     # 对数变换
     # 把小数值拉开，把大数值压缩 → 暗部变亮，细节显现。
-    log_img = grayscale_transformation.logTransform(60)
+    log_img = grayscale_transformation.logTransform(40)
     cv2.imwrite('./image/Venti_log.jpg', log_img)
 
     # 伽马变换
