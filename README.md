@@ -57,11 +57,6 @@ s = c * log(1 + r)
 s = c * r ^ (gamma)
 ```
 
-### 3. 分段线性变换
-
-
-
-
 
 ## 直方图均衡化（`Histogram_process.py`）
 
